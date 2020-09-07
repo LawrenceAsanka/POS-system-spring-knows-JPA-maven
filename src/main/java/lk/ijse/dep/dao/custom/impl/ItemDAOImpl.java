@@ -3,11 +3,11 @@ package lk.ijse.dep.dao.custom.impl;
 import lk.ijse.dep.dao.CrudDAOImpl;
 import lk.ijse.dep.dao.custom.ItemDAO;
 import lk.ijse.dep.entity.Item;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Component
+@Repository
 public class ItemDAOImpl extends CrudDAOImpl<Item, String> implements ItemDAO {
 
 
