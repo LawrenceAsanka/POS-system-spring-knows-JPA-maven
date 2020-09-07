@@ -16,11 +16,6 @@ public class QueryDAOImpl implements QueryDAO {
     private EntityManager entityManager;
 
     @Override
-    public void setEntityManger(EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
-
-    @Override
     public List<CustomEntity> getOrderDetail() throws Exception {
         List<CustomEntity> orderDetail = new ArrayList<>();
         List<Object[]> resultList = entityManager.createNativeQuery("SELECT o.id AS orderId,o.date AS orderDate,c.id AS customerId,c.name AS customerName,SUM(od.qty*od.unitPrice) AS total FROM `Order` o\n" +
