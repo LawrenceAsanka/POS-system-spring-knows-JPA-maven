@@ -38,6 +38,7 @@ public class JPAConfig {
         lcefmb.setDataSource(ds);
         // set the persistence.xml values
         lcefmb.setJpaVendorAdapter(jpaVendorAdapter());
+        lcefmb.setPackagesToScan("lk.ijse.dep.entity");
         return lcefmb;
     }
 

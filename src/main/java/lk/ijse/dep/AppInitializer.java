@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import lk.ijse.dep.db.JPAUtil;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
@@ -25,8 +24,6 @@ public class AppInitializer extends Application {
         ctx.refresh();
 
         launch(args);
-
-        JPAUtil.getEm().close();
 
     }
 
