@@ -3,6 +3,7 @@ package lk.ijse.dep.dao;
 import lk.ijse.dep.entity.SuperEntity;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
@@ -10,6 +11,8 @@ import java.util.List;
 public abstract class CrudDAOImpl<T extends SuperEntity, ID extends Serializable> implements CrudDAO<T, ID> {
 
     private final Class<T> entity;
+
+    @PersistenceContext
     protected EntityManager entityManager;
 
     public CrudDAOImpl() {
@@ -31,7 +34,7 @@ public abstract class CrudDAOImpl<T extends SuperEntity, ID extends Serializable
         entityManager.persist(entity);
     }
 
-    //update wenuwata merge use krai jpa wala...
+    //in JPA we use merge for update method
     @Override
     public void update(T entity) throws Exception {
         entityManager.merge(entity);
